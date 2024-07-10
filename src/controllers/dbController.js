@@ -4,13 +4,11 @@ const json_controller = require("./jsonController");
 
 class DbController {
   fetch_data() {
-    json_controller.fetch_data();
+    return json_controller.fetch_data();
   }
 
-  update_data(){
-    const receivedData = json_controller.update_data(); 
-    console.log('Received data:', receivedData);
-    res.send('Data updated');
+  remove_data_from_map( receivedId){
+    json_controller.remove_data_from_map(receivedId);
   }
 
 

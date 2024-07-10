@@ -7,12 +7,13 @@ class Helper {
       let map = dataBase.map_data;
         map[key] = value;
       }
-    remove_map(map, key) {
+    remove_data_from_map( key) {
+      let map = dataBase.map_data;
         delete map[key];
     }
 
     fetch_data(){
-      let map = dataBase.map_data;
+      const map = dataBase.map_data;
       return map;
     }
 

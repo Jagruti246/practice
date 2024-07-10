@@ -3,13 +3,11 @@ const helper = require("./helper");
 
 class JsonController {
   fetch_data() {
-    helper.fetch_data();
+    return helper.fetch_data();
   }
 
-  update_data(){
-    const receivedData = helper.update_data(); 
-    console.log('Received data:', receivedData);
-    res.send('Data updated');
+  remove_data_from_map( receivedId){
+    helper.remove_data_from_map(receivedId);
   }
 
   add_data_to_map( receivedId,  receivedData){

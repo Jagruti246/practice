@@ -33,7 +33,7 @@ app.post("/api/update", (req, res) => {
     const map = controller.fetch_data();
     controller.add_data_to_map( receivedData.id, receivedData); 
     console.log('Received data:', receivedData);
-    res.json(map);
+    res.json({message: 'New data added:', data: map });
 
 });
 
@@ -41,7 +41,7 @@ app.delete('/api/remove/:id', (req, res) => {
   const receivedId = req.params.id; 
   const map = controller.fetch_data();
   // const student_records = controller.get_map_data();
-  controller.remove_data(receivedId);
+  controller.remove_data_from_map(receivedId);
   res.json({ message: "Data removed", data: map });
 });
 
