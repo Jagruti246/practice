@@ -9,6 +9,7 @@ app.use(express.json());
 
 
  require("./src/routes/api-routes")(app);
+ require("./sambhavController")(app);
 
 
 

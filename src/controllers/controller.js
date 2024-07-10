@@ -15,6 +15,11 @@ class Controller {
     res.send('Data updated');
    
   }
+
+
+  add_data(map, key, content) {
+    map[key] = content;
+}
 }
 
 
