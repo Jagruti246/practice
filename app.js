@@ -9,7 +9,7 @@ app.use(express.json());
 
 
  require("./src/routes/api-routes")(app);
- require("./sambhavController")(app);
+
 
 
 
@@ -29,29 +29,29 @@ app.use(express.json());
 //remove 
 
 
-let my_map = new Map();
-my_map.set('1', { name: 'Item 1' });
-my_map.set('2', { name: 'Item 2' });
-my_map.set('3', { name: 'Item 3' });
+// let my_map = new Map();
+// my_map.set('1', { name: 'Item 1' });
+// my_map.set('2', { name: 'Item 2' });
+// my_map.set('3', { name: 'Item 3' });
 
 
-const remove_from_map = (map, id) => {
-    map.delete(id);
-};
+// const remove_from_map = (map, id) => {
+//     map.delete(id);
+// };
 
 
 
-app.post('/api/remove/:id', (req, res) => {
-    const id = req.params.id; // Accessing the 'id' parameter from the route
-    console.log('Received id:', id);
+// app.post('/api/remove/:id', (req, res) => {
+//     const id = req.params.id; // Accessing the 'id' parameter from the route
+//     console.log('Received id:', id);
 
-    if (id != null) {
-        remove_from_map(my_map, id);
-        console.log('Map data:', my_map);
-    }
+//     if (id != null) {
+//         remove_from_map(my_map, id);
+//         console.log('Map data:', my_map);
+//     }
 
-    res.json({ message: 'Data removed successfully', data: Array.from(my_map) });
-});
+//     res.json({ message: 'Data removed successfully', data: Array.from(my_map) });
+// });
 
 
 

@@ -1,29 +1,20 @@
-const my_map = {};
-
+const dataBase = require("./data");
 
 class Helper {
-    fetch_data() {
-      let data = { page: "My Page" };
-      console.log(`HELPER:   ${data}`);
-      return data;
-    }
 
-    
-    update_map(map, key, value) {
+
+    add_data_to_map(key, value) {
+      let map = dataBase.map_data;
         map[key] = value;
       }
+    remove_map(map, key) {
+        delete map[key];
+    }
 
-  update_data(receivedData){
-   //  app.post('/api/update', (req, res) => {
-    // const receivedData = req.body;  //Accessing the
-         console.log('Received data:', receivedData);
-        //  if (receivedData.id != null) {
-             update_map(my_map, receivedData.id, receivedData);
-             console.log('Map data:', my_map);
-        //  }
-          res.json({ message: 'Data updated successfully', data: my_map });
-       //  });
-        }
+    fetch_data(){
+      let map = dataBase.map_data;
+      return map;
+    }
 
     }
 

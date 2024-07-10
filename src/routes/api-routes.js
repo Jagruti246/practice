@@ -21,12 +21,30 @@ module.exports = function (app) {
   });
 
 
+// app.post("/api/update", (req, res) => {
+//   const receivedData = req.body;
+//     receivedData = controller.update_data(receivedData); 
+//     console.log('Received data:', receivedData);
+//     res.send('Data updated');
+// });
+
 app.post("/api/update", (req, res) => {
-  const receivedData = req.body;
-    receivedData = controller.update_data(receivedData); 
+    const receivedData = req.body;
+    const map = controller.fetch_data();
+    controller.add_data_to_map( receivedData.id, receivedData); 
     console.log('Received data:', receivedData);
-    res.send('Data updated');
+    res.json(map);
+
 });
+
+app.delete('/api/remove/:id', (req, res) => {
+  const receivedId = req.params.id; 
+  const map = controller.fetch_data();
+  // const student_records = controller.get_map_data();
+  controller.remove_data(receivedId);
+  res.json({ message: "Data removed", data: map });
+});
+
 
 
 }
